@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171216">
+<meta name="description" content="Una pequeña sorpresa para celebrar siete años de matrimonio.">
+<title>7 años contigo ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+:root{
+  --bg:#120e12; --cream:#f8f0e7; --soft:#e7d5cb; --rose:#c58f8f; --rose2:#e0b8ad;
+  --white:#fffaf6; --muted:#bcaeaa;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:Montserrat,Arial,sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+button{font:inherit}
+.hero{min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,9,.2),rgba(10,7,9,.72) 78%,var(--bg)),url("images/foto-06.jpeg") center 35%/cover no-repeat;filter:saturate(.72);transform:scale(1.03)}
+.hero-content{position:relative;z-index:2;padding:30px 22px;animation:appear 1.8s ease both}
+.kicker{font-size:.72rem;letter-spacing:.38em;text-transform:uppercase;color:#ead8d0;margin-bottom:20px}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(4.5rem,17vw,10rem);font-weight:500;line-height:.78;letter-spacing:-.04em}
+.hero-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2rem,7vw,4rem);font-weight:400;margin-top:20px}
+.divider{width:72px;height:1px;background:var(--rose2);margin:27px auto}
+.hero-note{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:#ead8d0}
+.scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:#d7c4bd;z-index:3;opacity:.85}
+.scroll::after{content:"";display:block;width:1px;height:38px;background:#d7c4bd;margin:10px auto 0;animation:pulse 1.8s infinite}
+
+.music{position:fixed;right:18px;top:18px;z-index:30;border:1px solid rgba(255,255,255,.22);background:rgba(18,14,18,.58);backdrop-filter:blur(14px);color:#fff;padding:10px 14px;border-radius:999px;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.72rem;letter-spacing:.08em}
+.music .dot{width:7px;height:7px;border-radius:50%;background:#dba9a0;box-shadow:0 0 0 0 rgba(219,169,160,.5)}
+.music.playing .dot{animation:beat 1s infinite}
+main{overflow:hidden}
+section{padding:100px 20px;max-width:1120px;margin:auto}
+.intro{max-width:760px;text-align:center}
+.eyebrow{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--rose2);margin-bottom:18px}
+h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.8rem,7vw,5rem);line-height:.95;font-weight:500;margin-bottom:26px}
+.intro p{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.45;color:#eee0d8}
+.signature{margin-top:30px;font-family:"Cormorant Garamond",serif;font-size:1.35rem;color:var(--rose2)}
+
+.milestone{max-width:850px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.milestone .copy{padding:20px}
+.milestone .number{font-family:"Cormorant Garamond",serif;font-size:8rem;line-height:.7;color:rgba(197,143,143,.18);margin-bottom:25px}
+.milestone p{color:#cbbcb6;max-width:520px}
+.quote{margin-top:26px;border-left:1px solid var(--rose);padding-left:20px;color:#ead8d0;font-family:"Cormorant Garamond",serif;font-size:1.35rem}
+
+.gallery{max-width:1180px}
+.gallery-head{text-align:center;margin-bottom:44px}
+.grid{columns:3 260px;column-gap:14px}
+.card{break-inside:avoid;margin-bottom:14px;position:relative;overflow:hidden;border-radius:3px;cursor:pointer;background:#21191e}
+.card img{width:100%;display:block;transition:transform .8s ease,filter .8s ease;filter:saturate(.84)}
+.card:hover img{transform:scale(1.035);filter:saturate(1)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(0,0,0,.25));pointer-events:none}
+
+.wool{position:relative;text-align:center;max-width:800px}
+.wool::before,.wool::after{content:"";position:absolute;width:160px;height:1px;background:linear-gradient(90deg,transparent,var(--rose),transparent);top:50%;opacity:.55}
+.wool::before{left:-180px}.wool::after{right:-180px}
+.wool-mark{font-size:2.5rem;margin-bottom:20px;opacity:.85}
+.wool p{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:#d7c7c0}
+
+.letter{max-width:760px;background:linear-gradient(145deg,#21181d,#171116);border:1px solid rgba(224,184,173,.15);padding:clamp(32px,7vw,72px);position:relative;box-shadow:0 30px 80px rgba(0,0,0,.25)}
+.letter::before{content:"\201C";font-family:Georgia,serif;font-size:8rem;color:rgba(224,184,173,.1);position:absolute;top:10px;left:24px}
+.letter p{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.35rem,3vw,1.75rem);line-height:1.55;position:relative}
+.letter .end{margin-top:30px;color:var(--rose2);font-size:1.1rem;text-align:right}
+
+.final{min-height:85svh;display:flex;align-items:center;justify-content:center;text-align:center;max-width:1000px}
+.final-photo{position:absolute;inset:0;opacity:.22;background:url("images/foto-04.jpeg") center/cover;filter:grayscale(.2);z-index:-1}
+.final::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),transparent 40%,var(--bg));z-index:-1}
+.final-content{padding:40px 20px}
+.final h2{font-size:clamp(3.4rem,10vw,7rem);margin-bottom:15px}
+.final .small{font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
+.heart{display:inline-block;margin-top:28px;font-size:1.8rem;animation:heartbeat 2s infinite}
+
+.lightbox{position:fixed;inset:0;background:rgba(8,6,8,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:94vw;max-height:90vh;object-fit:contain;box-shadow:0 20px 80px #000}
+.close{position:absolute;top:16px;right:20px;background:none;border:0;color:white;font-size:2rem;cursor:pointer}
+.navhint{position:absolute;bottom:18px;color:#a99b97;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+.reveal.visible{opacity:1;transform:none}
+@keyframes appear{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:.25;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+@keyframes beat{0%,100%{box-shadow:0 0 0 0 rgba(219,169,160,.45)}50%{box-shadow:0 0 0 6px rgba(219,169,160,0)}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}10%{transform:scale(1.15)}20%{transform:scale(1)}30%{transform:scale(1.1)}40%{transform:scale(1)}}
+@media(max-width:700px){
+ section{padding:78px 18px}
+ .milestone{grid-template-columns:1fr;gap:15px}
+ .milestone .number{font-size:6rem;margin-bottom:10px}
+ .wool::before,.wool::after{display:none}
+ .grid{columns:2 150px;column-gap:9px}
+ .card{margin-bottom:9px}
+ .music{right:12px;top:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<audio id="music" src="musica.mp3" loop preload="auto"></audio>
+<button class="music" id="musicBtn" aria-label="Activar música"><span class="dot"></span><span id="musicText">Música</span></button>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="kicker">Una historia que sigue escribiéndose</div>
+    <h1>7</h1>
+    <div class="hero-title">años contigo</div>
+    <div class="divider"></div>
+    <div class="hero-note">Nuestras bodas de lana · ❤️</div>
+  </div>
+  <div class="scroll">Desliza</div>
+</header>
+
+<main>
+  <section class="intro reveal">
+    <div class="eyebrow">Para ti</div>
+    <h2>Siete años.<br>Y volvería a elegirte.</h2>
+    <p>Hay momentos que pasan deprisa y otros que se quedan para siempre. Estos años están llenos de ellos: miradas, abrazos, risas, días fáciles y días que nos hicieron más fuertes.</p>
+    <div class="signature">Con todo mi amor.</div>
+  </section>
+
+  <section class="milestone reveal">
+    <div class="copy">
+      <div class="eyebrow">Bodas de lana</div>
+      <div class="number">07</div>
+      <h2>Lo que hemos tejido juntos</h2>
+      <p>La lana representa algo cálido, resistente y hecho poco a poco. Quizá por eso encaja tan bien con estos siete años: una vida construida con pequeños momentos que, juntos, se han convertido en algo enorme.</p>
+      <div class="quote">"Lo bonito no es contar los años, sino todo lo que hemos vivido dentro de ellos."</div>
+    </div>
+    <div class="card"><img src="images/foto-08.jpeg" alt="Un recuerdo de nuestra boda" loading="lazy"></div>
+  </section>
+
+  <section class="gallery reveal">
+    <div class="gallery-head">
+      <div class="eyebrow">Nuestros recuerdos</div>
+      <h2>Pequeños instantes,<br>una gran historia.</h2>
+    </div>
+    <div class="grid">
+      <div class="card"><img src="images/foto-01.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-02.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-03.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-04.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-05.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-06.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-07.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-09.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-10.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-11.jpeg" alt="Recuerdo" loading="lazy"></div>
+      <div class="card"><img src="images/foto-08.jpeg" alt="Recuerdo" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="wool reveal">
+    <div class="wool-mark">🧶</div>
+    <div class="eyebrow">Siete años</div>
+    <h2>Y aún quedan<br>muchísimas páginas.</h2>
+    <p>Porque siete años no son un final. Son una parte preciosa de una historia que todavía tenemos por delante.</p>
+  </section>
+
+  <section class="reveal">
+    <div class="letter">
+      <div class="eyebrow">Una última cosa</div>
+      <p>Gracias por cada día, por cada recuerdo y por todos los momentos que todavía nos quedan por vivir. Gracias por compartir conmigo esta aventura y por hacer que aquello que empezó como un "sí" se haya convertido en nuestra vida.</p>
+      <p class="end">Te quiero. ❤️</p>
+    </div>
+  </section>
+
+  <section class="final reveal">
+    <div class="final-photo"></div>
+    <div class="final-content">
+      <div class="eyebrow">7 años de casados</div>
+      <h2>Contigo.<br>Siempre.</h2>
+      <div class="small">Bodas de lana · 2026</div>
+      <div class="heart">♥</div>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="close" id="close" aria-label="Cerrar">×</button>
+  <img id="lightboxImg" src="" alt="Fotografía ampliada">
+  <div class="navhint">Toca fuera de la foto para cerrar</div>
+</div>
+
+<script>
+const audio=document.getElementById('music');
+const btn=document.getElementById('musicBtn');
+const text=document.getElementById('musicText');
+
+btn.addEventListener('click', async()=>{
+  if(audio.paused){
+    try{await audio.play();btn.classList.add('playing');text.textContent='Sonando';}
+    catch(e){text.textContent='Toca otra vez';}
+  }else{
+    audio.pause();btn.classList.remove('playing');text.textContent='Música';
+  }
+});
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const lightbox=document.getElementById('lightbox');
+const lightImg=document.getElementById('lightboxImg');
+document.querySelectorAll('.grid .card img').forEach(img=>{
+ img.addEventListener('click',()=>{
+   lightImg.src=img.src;lightbox.classList.add('open');document.body.style.overflow='hidden';
+ });
+});
+function closeBox(){lightbox.classList.remove('open');document.body.style.overflow='';lightImg.src='';}
+document.getElementById('close').addEventListener('click',closeBox);
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeBox()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox()});
+</script>
+</body>
+</html>
